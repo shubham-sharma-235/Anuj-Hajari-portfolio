@@ -1306,7 +1306,7 @@ html {
 }
 
 .hero-counter-area .count-text.percent:after {
-    content: '%+';
+    content: '%';
 }
 
 .hero-counter-area .counter-title {
