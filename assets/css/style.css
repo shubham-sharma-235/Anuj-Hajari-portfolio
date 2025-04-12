@@ -906,7 +906,7 @@ html {
     position: absolute;
     right: 0;
     top: 110%;
-    min-width: 180px;
+    min-width: 210px;
     background-color: var(--black-color);
     opacity: 0;
     -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=0)";

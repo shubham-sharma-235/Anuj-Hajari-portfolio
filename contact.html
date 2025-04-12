@@ -38,6 +38,8 @@
     <link rel="stylesheet" href="assets/css/style.css" />
     <!-- RESPONSIVE CSS -->
     <link rel="stylesheet" href="assets/css/responsive.css">
+
+    <link rel="stylesheet" href="assets/css/custom.css">
     <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
     <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
     <!--[if lt IE 9]>
@@ -85,11 +87,12 @@
                 <div class="header-inner">
                     <div class="row align-items-center">
                         <div class="col-xl-2 col-lg-2 col-md-6 col-6 col-sm-3">
-                            <div class="logo-area">
-                                <div class="logo">
-                                    <a href="index.html"><img src="assets/images/logo.png" alt=""></a>
+                            <a href="./contact.html">
+                                <div class="logo-area available-btn">
+                                    <i class='ri-circle-fill'></i>
+                                    <span>Available For Work</span>
                                 </div>
-                            </div>
+                            </a>
                         </div>
                         <div class="col-xl-10 col-lg-10 col-md-6 col-6 col-sm-9">
                             <div class="main-menu">
@@ -98,13 +101,14 @@
                                         <li><a href="index.html" class="linkstyle">Home</a></li>
                                         <li><a href="about.html" class="linkstyle">about</a></li>
                                         <li><a href="service.html" class="linkstyle">services</a></li>
-                                        <li class="has-dropdown"><a href="projects.html" class="linkstyle">projects</a>
+                                        <li class="has-dropdown"><a href="#" class="linkstyle">Portfolio</a>
                                             <ul class="sub-menu">
-                                                <li><a href="projects.html">Projects List</a></li>
-                                                <li><a href="single-project.html">Single Portfolio</a></li>
+                                                <li><a href="instagram-portfolio.html">Instagram Portfolio</a></li>
+                                                <li><a href="linkedin-portfolio.html">Linkedin Portfolio</a></li>
+                                                <li><a href="youtube-portfolio.html">Youtube Portfolio</a></li>
                                             </ul>
                                         </li>
-                                        <li><a href="blog.html" class="linkstyle">Blog</a></li>
+                                        <li><a href="stories.html" class="linkstyle">Stories</a></li>
                                         <li><a href="contact.html" class="linkstyle">Contact</a></li>
                                     </ul>
                                 </nav>
@@ -164,26 +168,28 @@
                             <span class="circle-btn">
                                 <i class="ri-map-pin-line"></i>
                             </span>
-                            <h2>our office:</h2>
-                            <p>Jurain,Dhaka Bangladesh</p>
+                            <h2>Based in:</h2>
+                            <p>Mumbai, Maharashtra</p>
                         </div>
                         <!-- / END CONTACT SINGLEDESIGN AREA -->
                         <!-- START CONTACT SINGLEDESIGN AREA -->
-                        <div class="single-contact wow fadeInUp" data-wow-delay=".4s">
+                        <!-- <div class="single-contact wow fadeInUp" data-wow-delay=".4s">
                             <span class="circle-btn">
                                 <i class="ri-headphone-line"></i>
                             </span>
                             <h2>contact number:</h2>
                             <p>+1234321321</p>
-                        </div>
+                        </div> -->
                         <!-- / END CONTACT SINGLEDESIGN AREA -->
                         <!-- START CONTACT SINGLEDESIGN AREA -->
                         <div class="single-contact wow fadeInUp" data-wow-delay=".6s">
                             <span class="circle-btn">
                                 <i class="ri-mail-line"></i>
                             </span>
-                            <h2>Email us:</h2>
-                            <p>websitename@mail.com</p>
+                            <h2>Email Me:</h2>
+                            <a href="mailto:hajarianuj@gmail.com">
+                                <p style="text-decoration: underline;">hajarianuj@gmail.com</p>
+                            </a>
                         </div>
                         <!-- / END CONTACT SINGLEDESIGN AREA -->
                         <!-- START CONTACT SINGLEDESIGN AREA -->
@@ -191,10 +197,9 @@
                             <h2>Socials</h2>
                             <div class="about-social">
                             <ul>
-                                <li><a href=""><i class="ri-facebook-circle-fill"></i></a></li>
-                                <li><a href=""><i class="ri-twitter-x-line"></i></a></li>
-                                <li><a href=""><i class="ri-linkedin-fill"></i></a></li>
-                                <li><a href=""><i class="ri-github-line"></i></a></li>
+                                <li><a href="https://www.instagram.com/anujhajari?igsh=ODk4aDczNWQ5dWtv&utm_source=qr"><i class="ri-instagram-line"></i></a></li>
+                                <li><a href="https://www.youtube.com/@anuj_hajari"><i class="ri-youtube-line"></i></a></li>
+                                <li><a href="https://www.linkedin.com/in/anujhajari-socialmediaspecialist/"><i class="ri-linkedin-fill"></i></a></li>
                             </ul>
                         </div>
                         </div>
@@ -209,7 +214,7 @@
                                 <div class="col-md-6">
                                     <div class="form-group">
                                         <label for="name">Full Name</label>
-                                        <input type="text" id="name" class="form-control" value="" placeholder="Steve Milner" required="" data-error="Please enter your Name" />
+                                        <input type="text" id="name" class="form-control" value="" placeholder="Your Name" required="" data-error="Please enter your Name" />
                                         <label for="name" class="for-icon"><i class="far fa-user"></i></label>
                                         <div class="help-block with-errors"></div>
                                     </div>
@@ -217,7 +222,7 @@
                                 <div class="col-md-6">
                                     <div class="form-group">
                                         <label for="email">Email Address</label>
-                                        <input type="email" id="email" class="form-control" value="" placeholder="hello@websitename.com" required="" data-error="Please enter your Email" />
+                                        <input type="email" id="email" class="form-control" value="" placeholder="hello@gmail.com" required="" data-error="Please enter your Email" />
                                         <label for="email" class="for-icon"><i class="far fa-envelope"></i></label>
                                         <div class="help-block with-errors"></div>
                                     </div>
@@ -265,17 +270,17 @@
                 <div class="col-lg-12">
                     <div class="footer-top">
                         <p> Have a project in mind?</p>
-                        <h2><a href="mailto:hello@websitename.com">let's work</a></h2>
+                        <h2><a href="./contact.html">let's work</a></h2>
                     </div>
                 </div>
             </div>
             <div class="row">
-                <div class="col-lg-6 col-sm-6">
-                    <p class="copy-left-text">Template by <a href="https://themeforest.net/user/creativepersonal/portfolio">Creative Personal®</a></p>
+                <!-- <div class="col-lg-6 col-sm-6">
+                    <p class="copy-left-text">Developed by <a href="https://shubhamsharmadev.netlify.app/">Shubham Sharma</a></p>
                 </div>
                 <div class="col-lg-6 col-sm-6">
-                    <p class="copy-right-text">&copy; Copyright 2024</p>
-                </div>
+                    <p class="copy-right-text">&copy; Copyright 2025</p>
+                </div> -->
             </div>
         </div>
     </footer>
