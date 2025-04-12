@@ -1,0 +1,17 @@
+.available-btn{
+    border: 1px solid #75d303;
+    border-radius: 3rem;
+    padding: 2px 10px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background-color: #75d30314;
+    transform: scale(.9);
+}
+.available-btn i{
+    color: #75d303;
+}
+.available-btn span{
+    color: #75d303;
+    font-size: 14px;
+}
