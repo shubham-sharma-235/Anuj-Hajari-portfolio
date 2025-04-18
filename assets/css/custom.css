@@ -15,3 +15,40 @@
     color: #75d303;
     font-size: 14px;
 }
+
+
+.hero-content h2 {
+    font-weight: 500;
+    font-size: 230px;
+    text-transform: uppercase;
+    text-align: center;
+    
+    background: radial-gradient(#4c049f, #150033);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    
+    background-clip: text;
+    text-fill-color: transparent;
+}
+.section-title h2 {
+    background: radial-gradient(#4c049f, #150033);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    
+    background-clip: text;
+    text-fill-color: transparent;
+}
+/* ,.service-item h4 ,.service-item p */
+
+.company-design-area {
+    background: radial-gradient(circle,rgba(88, 11, 176, 1) 0%, rgba(27, 0, 65, 1) 100%);
+}
+.about-area {
+    background: radial-gradient(circle,rgba(88, 11, 176, 1) 0%, rgba(27, 0, 65, 1) 100%);
+}
+.projects-area {
+    background: radial-gradient(circle,rgba(97, 12, 194, 1) 0%, rgba(27, 0, 65, 1) 100%);
+}
+.blog-area {
+    background: radial-gradient(circle,rgba(97, 12, 194, 1) 0%, rgba(27, 0, 65, 1) 100%);
+}
