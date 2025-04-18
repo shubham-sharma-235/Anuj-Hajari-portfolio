@@ -173,12 +173,14 @@
                     </div>
                     <!-- / END HERO DESIGN AREA -->
                 </div>
+                
                 <div class="col-lg-6">
                     <div class="hero-image">
-                        <img src="assets/images/about/me.jpg" alt="">
+                        <img id="profile-image" src="assets/images/about/me.jpg" alt="">
                     </div>
-                    <!-- / END HERO DESIGN AREA -->
                 </div>
+                
+                
                 <div class="col-lg-3 pt-30">
                     <div class="hero-content wow fadeInUp delay-0-4s">
                         <p>Hi, I’m Anuj, i help you in Building your personal brand.</p>
@@ -367,10 +369,10 @@
                             <!-- Image -->
                             <img src="./assets/images/projects/instagram/cover-mockup.svg" alt="" data-rjs="2">
                             <!-- Category -->
-                            <span class="portfolio-category">Video</span>
+                            <!-- <span class="portfolio-category">Video</span> -->
                             <!-- Caption -->
                             <div class="portfolio-caption">
-                                <h1>Orange Rose Flower</h1>
+                                <h1>Instagram Results</h1>
                             </div>
                         </div>
                     </a>
@@ -383,10 +385,10 @@
                             <!-- Image -->
                             <img src="./assets/images/projects/linkedin/cover-mockup.svg" alt="" data-rjs="2">
                             <!-- Category -->
-                            <span class="portfolio-category">Mockup</span>
+                            <!-- <span class="portfolio-category">Mockup</span> -->
                             <!-- Caption -->
                             <div class="portfolio-caption">
-                                <h1>Orange Rose Flower</h1>
+                                <h1>Linkedin Results</h1>
                             </div>
                         </div>
                     </a>
@@ -399,10 +401,10 @@
                             <!-- Image -->
                             <img src="./assets/images/projects/youtube/cover-mockup.svg" alt="" data-rjs="2">
                             <!-- Category -->
-                            <span class="portfolio-category">Branding</span>
+                            <!-- <span class="portfolio-category">Branding</span> -->
                             <!-- Caption -->
                             <div class="portfolio-caption">
-                                <h1>Green Plant on a Desk</h1>
+                                <h1>Youtube Results</h1>
                             </div>
                         </div>
                     </a>
@@ -423,8 +425,8 @@
                 </div>
             </div>
             <div class="row">
-                <div class="col-lg-6 col-md-6">
-                    <!-- START SINGLE TESTIMONIALS DESIGN AREA -->
+                <!-- <div class="col-lg-6 col-md-6">
+                    
                     <div class="testimonial-item wow fadeInUp delay-0-2s">
                         <div class="author">
                             <img src="assets/images/testimonials/author1.jpg" alt="Author" />
@@ -439,10 +441,10 @@
                             <span>CEO & Founder X</span>
                         </div>
                     </div>
-                    <!-- / END SINGLE TESTIMONIALS DESIGN AREA -->
+                    
                 </div>
                 <div class="col-lg-6 col-md-6">
-                    <!-- START SINGLE TESTIMONIALS DESIGN AREA -->
+                    
                     <div class="testimonial-item wow fadeInUp delay-0-4s">
                         <div class="author">
                             <img src="assets/images/testimonials/author2.jpg" alt="Author" />
@@ -457,8 +459,8 @@
                             <span>CEO & Founder Google</span>
                         </div>
                     </div>
-                    <!-- / END SINGLE TESTIMONIALS DESIGN AREA -->
-                </div>
+                    
+                </div> -->
                 <div class="col-lg-4 col-md-6">
                     <!-- START SINGLE TESTIMONIALS DESIGN AREA -->
                     <div class="testimonial-item wow fadeInUp delay-0-6s">
@@ -755,6 +757,20 @@
     <script src="assets/js/wow.min.js"></script>
     <!-- SCRIPT JS-->
     <script src="assets/js/script.js"></script>
+    
+    <script>
+        const img = document.getElementById('profile-image');
+        const originalSrc = 'assets/images/about/me.jpg';
+        const hoverSrc = 'assets/images/about/me-hover.jpg';
+      
+        img.addEventListener('mouseover', () => {
+          img.src = hoverSrc;
+        });
+      
+        img.addEventListener('mouseout', () => {
+          img.src = originalSrc;
+        });
+      </script>      
 </body>
 
 </html>
