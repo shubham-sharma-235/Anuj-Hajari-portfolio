@@ -16,6 +16,15 @@
     font-size: 14px;
 }
 
+@media(max-width:1420px){
+    .available-btn{
+        border-radius: 3rem;
+        width: 12rem;
+        padding: 2px 10px;
+        transform: scale(.9);
+    }
+}
+
 
 /* .hero-content h2 {
 
