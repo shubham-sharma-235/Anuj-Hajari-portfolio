@@ -1302,7 +1302,7 @@ html {
 }
 
 .hero-counter-area .count-text.k-plus:after {
-    content: 'k+';
+    content: 'B+';
 }
 
 .hero-counter-area .count-text.percent:after {

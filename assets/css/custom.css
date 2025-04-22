@@ -25,7 +25,30 @@
     }
 }
 
+.hero-content h2 {
 
+    background: radial-gradient(#3d047f, #150033);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    
+    background-clip: text;
+    text-fill-color: transparent;
+}
+.footer-top h2{
+    transition: all ease-in-out .3s;
+}
+.footer-top h2:hover{
+    background: radial-gradient(#3d047f, #150033);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    transition: all ease-in-out .3s;
+    
+    background-clip: text;
+    text-fill-color: transparent;
+}
+.company-design-area {
+    background: radial-gradient(circle,rgb(70, 9, 139) 0%, rgba(27, 0, 65, 1) 100%);
+}
 /* .hero-content h2 {
 
     background: radial-gradient(#4c049f, #150033);
