@@ -437,6 +437,9 @@ Version      : 1.0
     .hero-image img {
         margin-top: 0;
     }
+    .hero-image img {
+        width: 280px;
+    }
 
     .hero-content .dot-shape {
         left: 3%;
