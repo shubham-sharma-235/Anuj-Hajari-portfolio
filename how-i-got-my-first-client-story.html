@@ -48,155 +48,125 @@
     <![endif]-->
 
     <style>
-        :root {
-      --primary: #1e40af;
-      --text: #1f2937;
-      --muted: #6b7280;
-      --bg: #f9fafb;
-      --highlight: #f1f5f9;
-    }
+        body{
+          background-color: #F4F3ED;
+        }
+        .story-page-img {
+          width: 100%;
+          max-height: 680px;
+          object-fit: cover;
+          display: block;
+          padding-top: 5.8rem;
+        }
+        .story-page-img-wrapper {
+          height: 600px;
+          overflow: hidden;
+          position: relative;
+        }
+        
+        .story-page-img {
+          width: 100%;
+          height: 100%;
+          object-fit: cover;
+          transition: transform 0.3s ease;
+          transform-origin: center;
+        }
+    
+        .story-page-container {
+          color: #000;
+          max-width: 1600px;
+          margin: auto;
+          padding: 40px 20px;
+        }
+    
+        .story-page-heading {
+          text-align: center;
+          margin-top: 30px;
+          font-size: 2.5em;
+          padding: .4rem 0;
+          font-weight: bold;
+          color: #222;
+          line-height: 50px;
+        }
 
-    .story-page__header {
-        /* background: radial-gradient(#4c049f, #150033); */
-      color: white;
-      padding: 60px 20px;
-      text-align: center;
-    }
+        .story-page-highlight {
+          background-color: #fff8e1;
+          padding: 4px 8px;
+          border-radius: 4px;
+        }
+    
+        .story-page-text {
+          font-size: 1.1em;
+          margin-bottom: 20px;
+        }
+    
+        .story-page-quote {
+          font-style: italic;
+          background-color: #f0f0f0;
+          border-left: 5px solid #ccc;
+          padding: 15px 20px;
+          margin: 30px 0;
+          color: #555;
+        }
+    
+        .story-page-footer {
+          margin-top: 50px;
+          text-align: center;
+          color: #888;
+          font-size: 0.9em;
+        }
 
-    .story-page_image{
-      display: flex;
-      align-items: center;
-      justify-content: start;
-    }
-    .story-page_image img{
-      height: 18vw;
-    }
+        .theme-btn{
+          color: #fff;
+        }
+        .theme-btn:hover{
+          color: #000;
+        }
 
-    .story-page-heading h2{
-        font-size: 50px;
-    }
+        /* Responsive adjustments */
+        @media (max-width: 768px) {
+          .story-page-heading {
+            font-size: 1.8em;
+            margin-top: 20px;
+          }
+    
+          .story-page-text {
+            font-size: 1em;
+          }
+    
+          .story-page-container {
+            padding: 30px 15px;
+          }
+    
+          .story-page-cta {
+            font-size: 1em;
+            padding: 12px 20px;
+          }
+          .story-page-img-wrapper {
+            height: 300px;
+          }
+        }
 
-    .story-page__title {
-      font-size: 3.4rem;
-      font-weight: 700;
-      margin-bottom: 10px;
-    }
-
-    .story-page__subtitle {
-      font-size: 1.1rem;
-      font-weight: 400;
-      color: #e0e7ff;
-    }
-
-    .story-page__container {
-      max-width: 90%;
-      margin: 40px auto;
-      padding: 40px;
-      background-color: white;
-      box-shadow: 0 4px 20px rgba(0, 0, 0, 0.05);
-      border-radius: 10px;
-    }
-
-    .story-page__heading {
-      font-size: 1.5rem;
-      font-weight: 600;
-      margin-top: 40px;
-      margin-bottom: 20px;
-      color: var(--primary);
-    }
-
-    .story-page__paragraph {
-      margin: 16px 0;
-      color: var(--text);
-      font-size: 1.05rem;
-    }
-
-    .story-page__quote {
-      font-style: italic;
-      border-left: 4px solid var(--primary);
-      background-color: var(--highlight);
-      padding: 16px 20px;
-      margin: 24px 0;
-      color: var(--muted);
-      border-radius: 6px;
-    }
-
-    .story-page__author-note {
-      margin-top: 50px;
-      padding: 20px 25px;
-      background-color: var(--highlight);
-      border-left: 4px solid var(--primary);
-      font-size: 1rem;
-      border-radius: 6px;
-      color: var(--text);
-    }
-
-    /* RESPONSIVE STYLES */
-    @media (max-width: 768px) {
-      .story-page__title {
-        font-size: 2.2rem;
-      }
-
-      .story-page__container {
-        margin: 30px 20px;
-        padding: 30px 20px;
-      }
-
-      .story-page__heading {
-        font-size: 1.3rem;
-      }
-
-      .story-page__paragraph {
-        font-size: 1rem;
-      }
-
-      .story-page__author-note {
-        font-size: 0.95rem;
-      }
-      .story-page-heading{
-        font-size: 40px;
-    }
-    }
-
-    @media (max-width: 480px) {
-      .story-page__title {
-        font-size: 1.7rem;
-      }
-
-      .story-page__subtitle {
-        font-size: 1rem;
-      }
-
-      .story-page__container {
-        margin: 20px 10px;
-        padding: 25px 15px;
-      }
-
-      .story-page__heading {
-        font-size: 1.2rem;
-      }
-
-      .story-page__paragraph {
-        font-size: 0.95rem;
-      }
-
-      .story-page__quote {
-        font-size: 0.95rem;
-      }
-
-      .story-page__author-note {
-        font-size: 0.9rem;
-      }
-    }
-    body{
-      background-color: #F4F3ED;
-    }
+        @media (max-width: 480px) {
+          .story-page-heading {
+            font-size: 1.5em;
+          }
+    
+          .story-page-text {
+            font-size: 0.95em;
+          }
+    
+          .story-page-container {
+            padding: 25px 10px;
+          }
+        }
+    
     </style>
 </head>
 
 <body>
     <!-- START PRELOADER AREA-->
-    <!-- <div class="preloader">
+    <div class="preloader">
         <svg viewbox="0 0 1000 1000" preserveaspectratio="none">
             <path id="preloaderSvg" d="M0,1005S175,995,500,995s500,5,500,5V0H0Z"></path>
         </svg>
@@ -211,7 +181,7 @@
                 <span>g</span>
             </div>
         </div>
-    </div> -->
+    </div>
     <!-- END PRELOADER AREA -->
     <!-- START SCROOL UP DESIGN AREA -->
     <div class="progress-wrap cursor-pointer">
@@ -285,59 +255,67 @@
     <div class="body-overlay"></div>
     <!-- // END MOBILE MENU DESIGN AREA-->
     <!-- START SINGLE PAGE DESIGN AREA -->
-    <section class="single-page-hero-area">
-        <div class="container">
-            <div class="row align-items-center">
-                <div class="col-lg-12 story-page-heading">
-                    <h2>How I Got a 10M+ Creator as My First Client</h2>
-                    <p>With Zero Experience as a beginner</p>
-                </div>
-            </div>
-        </div>
-    </section>
-    <!-- // END SINGLE PAGE DESIGN AREA -->
-    <!-- START VLOG DESIGN AREA -->
-    <!-- <header class="story-page__header">
-        <h1 class="story-page__title">How I Got a 10M+ Creator as My First Client</h1>
-        <p class="story-page__subtitle">With Zero Experience & A ₹450 Course</p>
-      </header> -->
     
-      <main class="story-page__container">
-        <div class="story-page_image">
-          <img src="./assets/images/blog/blog1.jpg" alt="">
-        </div>
-        <p class="story-page__paragraph">In 2022, I had no marketing degree. No agency experience. Just a ₹450 Udemy course and a gut feeling that digital marketing could be my thing.</p>
+    <!-- Top image -->
+    <div class="story-page-img-wrapper">
+      <img src="./assets/images/blog/blog1-header.jpg" alt="Story Banner" class="story-page-img"/>
+    </div>
+
+  <!-- Heading -->
+    <div class="story-page-heading">How I Landed My First Big Client with No Experience</div>
+
+  <!-- Content container -->
+  <div class="story-page-container">
+    <p class="story-page-text">In 2022, I had no marketing degree. No agency experience. Just a ₹450 Udemy course and a gut feeling that digital marketing could be my thing.</p>
+
+    <p class="story-page-text">It all started with a basic online course in digital marketing. Then I got curious. I niched down into content marketing. Then social media marketing.<br><span class="story-page-highlight">That’s when something clicked.</span></p>
+
+    <p class="story-page-text">Platforms like YouTube, Instagram, LinkedIn — I didn’t just study them, I got obsessed with how they worked.</p>
+
+    <p class="story-page-text">But after all the learning came the big question: <strong>Who’s going to hire me without a formal background?</strong></p>
+
+    <p class="story-page-text">I applied for a few jobs. Got rejected. But I didn’t stop. I switched gears.</p>
+
+    <p class="story-page-text">I started learning freelancing. Took classes. Built fake brands. Showed fake results — to prove real skills. I built a portfolio out of thin air.</p>
+
+    <p class="story-page-text">Then one day, I was casually going through Instagram stories…</p>
+
+    <blockquote class="story-page-quote">
+      “We’re hiring a Social Media Manager. Email us.” <br/>
+      It was Indian Farmer — a huge creator with over 10 million followers across platforms.
+    </blockquote>
+
+    <p class="story-page-text">I was barely 2–3 months into this field. No real client work. Just my hustle and hunger.</p>
+
+    <p class="story-page-text">But I pitched. I wrote an email that didn’t scream “pick me” — it quietly said: “I’m made for this.”</p>
+
+    <p class="story-page-text">I waited. 1 day. 3 days. 7 days. By Day 10, I had moved on.</p>
+
+    <p class="story-page-text"><strong>Day 11 —</strong> I casually checked my inbox. One new message.</p>
+
+    <blockquote class="story-page-quote">
+      “Can you share your number? Let’s connect.”
+    </blockquote>
+
+    <p class="story-page-text">That’s how I landed my first ever real client. And that too, one of the biggest in the creator space.</p>
+
+    <p class="story-page-text">I didn’t have credibility. <strong>I created proof.</strong></p>
+
+    <p class="story-page-text">I didn’t wait for a job to be handed to me. I wrote my own intro, and sent it anyway.</p>
+
+    <p class="story-page-text">If you’re reading this thinking <em>“Why would someone hire me?”</em> — let me tell you something:</p>
+
+    <blockquote class="story-page-quote">
+      It only takes one email. The right one.
+    </blockquote>
+
+    <a href="./stories.html" class="theme-btn">💡 Want more stories like this?</a>
+
+    <div class="story-page-footer">
+      Stay tuned for tips, personal wins, and freelancing real talk from someone who started from scratch.
+    </div>
+  </div>
     
-        <p class="story-page__paragraph">It all started with a basic online course in digital marketing. Then I got curious. I niched down into content marketing. Then social media marketing. That’s when something clicked.</p>
-        <p class="story-page__paragraph">Platforms like YouTube, Instagram, LinkedIn — I didn’t just study them, I got obsessed with how they worked.</p>
-    
-        <p class="story-page__paragraph">But after all the learning came the big question: <strong>Who’s going to hire me without a formal background?</strong></p>
-        <p class="story-page__paragraph">I applied for a few jobs. Got rejected. But I didn’t stop. I switched gears.</p>
-    
-        <p class="story-page__paragraph">I started learning freelancing. Took classes. Built fake brands. Showed fake results — to prove real skills. I built a portfolio out of thin air.</p>
-    
-        <p class="story-page__paragraph">Then one day, I was casually going through Instagram stories…</p>
-        <div class="story-page__quote">“We’re hiring a Social Media Manager. Email us.”</div>
-        <p class="story-page__paragraph">It was <strong>Indian Farmer</strong> — a huge creator with over 10 million followers across platforms.</p>
-        <p class="story-page__paragraph">I was barely 2–3 months into this field. No real client work. Just my hustle and hunger.</p>
-    
-        <p class="story-page__paragraph">But I pitched. I wrote an email that didn’t scream “pick me” — it quietly said: <strong>“I’m made for this.”</strong></p>
-    
-        <p class="story-page__paragraph">I waited. 1 day. 3 days. 7 days. By Day 10, I had moved on.</p>
-        <p class="story-page__paragraph">Day 11 — I casually checked my inbox. One new message.</p>
-        <div class="story-page__quote">“Can you share your number? Let’s connect.”</div>
-        <p class="story-page__paragraph">That’s how I landed my first ever real client. And that too, one of the biggest in the creator space.</p>
-    
-        <p class="story-page__paragraph">I didn’t have credibility. I created proof.</p>
-        <p class="story-page__paragraph">I didn’t wait for a job to be handed to me. I wrote my own intro, and sent it anyway.</p>
-        <p class="story-page__paragraph">If you’re reading this thinking <em>“Why would someone hire me?”</em> — let me tell you something:</p>
-        <div class="story-page__quote">It only takes one email. The right one.</div>
-    
-        <div class="story-page__author-note">
-          💡 <strong>Want more stories like this?</strong> Stay tuned for tips, personal wins, and freelancing real talk from someone who started from scratch. <a href="./stories.html" style="text-decoration: underline;">All Stories</a>
-        </div>
-      </main>
-    <!-- / END VLOG DESIGN AREA -->
 
     <!-- START FOOTER DESIGN AREA -->
     <footer class="main-footer">
@@ -387,6 +365,17 @@
     <script src="assets/js/wow.min.js"></script>
     <!-- SCRIPT JS-->
     <script src="assets/js/script.js"></script>
+
+    <script>
+      const image = document.querySelector('.story-page-img');
+    
+      window.addEventListener('scroll', () => {
+        const scrollY = window.scrollY;
+        const scale = 1 + scrollY / 1000; // Adjust strength
+        image.style.transform = `scale(${Math.min(scale, 1.2)})`; // Limit zoom to 1.2x
+      });
+    </script>
+    
 </body>
 
 </html>
