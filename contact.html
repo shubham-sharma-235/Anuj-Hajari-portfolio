@@ -209,7 +209,11 @@
                 <!-- START CONTACT FORM DESIGN AREA -->
                 <div class="col-lg-8">
                     <div class="contact-form contact-form-area wow fadeInUp delay-0-4s">
-                        <form id="contactForm" class="contact-form" action="#" method="post">
+                        <form action="https://api.web3forms.com/submit" method="POST">
+
+                            <!-- Replace with your Access Key -->
+                            <input type="hidden" name="access_key" value="626ab594-c93e-468f-ba6d-af3e4e827733">
+                        
                             <div class="row">
                                 <div class="col-md-6">
                                     <div class="form-group">
@@ -255,6 +259,7 @@
                                     <p class="input-error">Sorry, Message could not send! Please try again.</p>
                                 </div>
                             </div>
+                        
                         </form>
                     </div>
                 </div>
