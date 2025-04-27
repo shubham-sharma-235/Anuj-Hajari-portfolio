@@ -1,0 +1,196 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Timeline Scroll Animation</title>
+  <style>
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+    body {
+      font-family: 'Poppins', sans-serif;
+      background: #f2f2f2;
+      overflow-x: hidden;
+    }
+    .timeline-container {
+      position: relative;
+      width: 90%;
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 100px 0;
+      min-height: 250vh;
+    }
+    .timeline-line {
+      position: absolute;
+      left: 50%;
+      top: 0;
+      transform: translateX(-50%);
+      width: 4px;
+      background: linear-gradient(to bottom, #3498db, #2980b9);
+      height: 50px;
+      z-index: 1;
+      transition: height 0.3s ease-out;
+    }
+    .timeline-item {
+      position: relative;
+      width: 50%;
+      padding: 40px 40px;
+      box-sizing: border-box;
+    }
+    .timeline-item.left {
+      left: 0;
+      text-align: right;
+    }
+    .timeline-item.right {
+      left: 50%;
+      text-align: left;
+    }
+    .timeline-card {
+      background: white;
+      padding: 40px 30px;
+      height: 250px;
+      border-radius: 12px;
+      box-shadow: 0 6px 20px rgba(0,0,0,0.1);
+      position: relative;
+      opacity: 0;
+      transform: translateY(100px);
+      transition: 0.8s ease;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+    }
+    .timeline-item.left .timeline-card::after,
+    .timeline-item.right .timeline-card::after {
+      content: '';
+      position: absolute;
+      top: 30px;
+      width: 15px;
+      height: 15px;
+      background: #3498db;
+      border: 3px solid #fff;
+      border-radius: 50%;
+      z-index: 2;
+    }
+    .timeline-item.left .timeline-card::after {
+      right: -50px;
+    }
+    .timeline-item.right .timeline-card::after {
+      left: -50px;
+    }
+    .timeline-card.show {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    /* ------ RESPONSIVE ------ */
+    @media screen and (max-width: 900px) {
+      .timeline-container {
+        padding: 80px 20px;
+      }
+      .timeline-item {
+        width: 100%;
+        padding: 20px 0;
+        text-align: center;
+      }
+      .timeline-item.left, .timeline-item.right {
+        left: 0;
+      }
+      .timeline-card {
+        margin: 0 auto;
+        height: auto;
+        padding: 30px 20px;
+        width: 90%;
+      }
+      .timeline-line {
+        left: 20px;
+        transform: none;
+      }
+      .timeline-item .timeline-card::after {
+        left: 10px;
+        right: auto;
+      }
+    }
+
+    @media screen and (max-width: 500px) {
+      .timeline-card {
+        padding: 20px 15px;
+        width: 95%;
+      }
+      .timeline-line {
+        width: 3px;
+        left: 15px;
+      }
+    }
+  </style>
+</head>
+<body>
+
+<div class="timeline-container">
+  <div class="timeline-line" id="timeline-line"></div>
+
+  <div class="timeline-item left">
+    <div class="timeline-card">
+      <h3>Step 1</h3>
+      <p>Started with a small idea and big dreams.</p>
+    </div>
+  </div>
+
+  <div class="timeline-item right">
+    <div class="timeline-card">
+      <h3>Step 2</h3>
+      <p>Gathered an amazing team with shared passion.</p>
+    </div>
+  </div>
+
+  <div class="timeline-item left">
+    <div class="timeline-card">
+      <h3>Step 3</h3>
+      <p>Developed and launched the first product.</p>
+    </div>
+  </div>
+
+  <div class="timeline-item right">
+    <div class="timeline-card">
+      <h3>Step 4</h3>
+      <p>Reached milestones and expanded the vision.</p>
+    </div>
+  </div>
+
+  <div style="height: 300px;"></div> <!-- Spacer -->
+</div>
+
+<script>
+  const timelineLine = document.getElementById('timeline-line');
+  const timelineCards = document.querySelectorAll('.timeline-card');
+  const container = document.querySelector('.timeline-container');
+
+  function animateTimeline() {
+    const scrollTop = window.scrollY;
+    const containerTop = container.offsetTop;
+    const containerHeight = container.offsetHeight;
+    const windowHeight = window.innerHeight;
+
+    const maxScroll = containerTop + containerHeight - windowHeight;
+
+    if (scrollTop >= containerTop && scrollTop <= maxScroll + windowHeight) {
+      const progress = Math.min((scrollTop - containerTop + windowHeight / 3) / containerHeight, 1);
+      timelineLine.style.height = `${progress * containerHeight}px`;
+    }
+
+    timelineCards.forEach(card => {
+      const rect = card.getBoundingClientRect();
+      if (rect.top < window.innerHeight - 100) {
+        card.classList.add('show');
+      }
+    });
+  }
+
+  window.addEventListener('scroll', animateTimeline);
+  window.addEventListener('load', animateTimeline);
+</script>
+
+</body>
+</html>
