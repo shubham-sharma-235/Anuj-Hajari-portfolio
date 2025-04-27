@@ -41,7 +41,8 @@
 
     <link rel="stylesheet" href="assets/css/custom.css">
 
-    <!-- <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet"> -->
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+
     <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
     <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
     <!--[if lt IE 9]>
@@ -49,17 +50,20 @@
       <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
     <![endif]-->
     <style>
-        body{
+        body {
           background-color: #f7f7f4!important;
         }
+        
         .timeline-container {
           position: relative;
-          width: 90%;
+          width: 65%;
           max-width: 1400px;
           margin: 0 auto;
           padding-top: 60px;
-          min-height: 250vh;
+          min-height: auto;
+          padding-bottom: 10rem;
         }
+        
         .timeline-line {
           position: absolute;
           left: 50%;
@@ -67,126 +71,131 @@
           transform: translateX(-50%);
           width: 4px;
           background: linear-gradient(to bottom, #3B007E, #230054);
-          height: 50px;
+          height: 100%;
           z-index: 1;
-          transition: height 0.3s ease-out;
         }
+        
         .timeline-item {
+          display: flex;
+          justify-content: space-between;
+          align-items: center;
           position: relative;
-          width: 50%;
-          padding: 40px 40px;
-          box-sizing: border-box;
+          margin: 50px 0;
         }
-        .timeline-item.left {
-          left: 0;
-          text-align: right;
+        
+        .timeline-side {
+          width: 45%;
+          position: relative;
+          z-index: 2;
         }
-        .timeline-item.right {
-          left: 50%;
-          text-align: left;
+        
+        .image-side img {
+          width: 100%;
+          border-radius: 12px;
+          object-fit: cover;
         }
-        .timeline-card {
+        
+        .content-side {
           background: white;
           padding: 40px 30px;
-          height: 550px;
-          height: auto;
           border-radius: 12px;
-          /* box-shadow: 0 6px 20px rgba(0,0,0,0.1); */
-          position: relative;
-          opacity: 0;
-          transform: translateY(100px);
-          transition: 0.8s ease;
-          display: flex;
-          flex-direction: column;
-          justify-content: center;
-          /* padding-top: 8rem;
-          padding-bottom: 8rem; */
+          box-shadow: 0 6px 20px rgba(0, 0, 0, 0.1);
         }
-        .timeline-card img{
-            border-radius: 8px;
+        
+        .content-side h3 {
+          color: #000;
+          margin-bottom: 10px;
+          font-size: 2rem;
         }
-        .timeline-card h3{
-            color: #000;
-            padding: 6px 0;
-            font-size: 2rem;
+        
+        .content-side p {
+          color: #979797;
+          font-size: 1rem;
         }
-        .timeline-card p{
-            color: #979797;
-            font-size: 1rem;
-        }
-        .timeline-item.left .timeline-card::after,
-        .timeline-item.right .timeline-card::after {
+        
+        /* Timeline dots */
+        .timeline-item::before {
           content: '';
           position: absolute;
-          top: 30px;
+          top: 50%;
+          left: 50%;
+          transform: translate(-50%, -50%);
           width: 20px;
           height: 20px;
           background: #3B007E;
           border: 3px solid #fff;
           border-radius: 50%;
-          z-index: 2;
+          z-index: 3;
         }
-        .timeline-item.left .timeline-card::after {
-          right: -50px;
+        
+        /* ---------- RESPONSIVE STYLES ---------- */
+        @media (max-width: 1200px) {
+        .timeline-container {
+            width: 75%;
         }
-        .timeline-item.right .timeline-card::after {
-          left: -50px;
         }
-        .timeline-card.show {
-          opacity: 1;
-          transform: translateY(0);
+        @media (max-width: 1200px) {
+          .content-side h3 {
+            font-size: 1.8rem;
+          }
         }
 
-        /* ------ RESPONSIVE ------ */
-        @media (max-width: 1350px) {
-            .timeline-card h3{
-                color: #000;
-                padding: 6px 0;
-                font-size: 1.6rem;
-            }
-            .timeline-card p{
-                color: #979797;
-                font-size: 1rem;
-            }
-        }
-        @media screen and (max-width: 900px) {
-          .timeline-container {
-            padding: 80px 20px;
-          }
+        @media (max-width: 900px) {
           .timeline-item {
-            width: 100%;
-            padding: 20px 0;
+            flex-direction: column;
             text-align: center;
           }
-          .timeline-item.left, .timeline-item.right {
-            left: 0;
+        
+          .timeline-side {
+            width: 100%;
+            margin-bottom: 30px;
           }
-          .timeline-card {
-            margin: 0 auto;
-            height: auto;
-            padding: 30px 20px;
-            width: 90%;
-          }
+        
           .timeline-line {
             left: 20px;
             transform: none;
           }
-          .timeline-item .timeline-card::after {
-            left: 10px;
-            right: auto;
+        
+          .timeline-item::before {
+            left: 20px;
+            transform: translateY(-50%);
+          }
+        
+          .content-side {
+            width: 100%;
+            margin: 0 auto;
+            padding: 30px 20px;
+          }
+        
+          .content-side h3 {
+            font-size: 1.5rem;
           }
         }
-
-        @media screen and (max-width: 500px) {
-          .timeline-card {
-            padding: 20px 15px;
-            width: 95%;
+        
+        @media (max-width: 900px) {
+        .timeline-container{
+            padding-bottom: 2rem;
+        }
+          .content-side h3 {
+            font-size: 1.3rem;
           }
+        
+          .content-side p {
+            font-size: 0.95rem;
+          }
+        
           .timeline-line {
             width: 3px;
-            left: 15px;
+            left: -15px;
+        }
+        
+        .timeline-item::before {
+            width: 16px;
+            height: 16px;
+            left: -22px;
           }
         }
+                
     </style>
 </head>
 
@@ -295,66 +304,129 @@
     <div class="timeline-container">
         <div class="timeline-line" id="timeline-line"></div>
       
-        <div class="timeline-item left" data-aos="fade-up">
-          <div class="timeline-card">
-            <img src="./assets/images/about/about-img-1.jpg" alt="">
+        <!-- Timeline Item -->
+        <div class="timeline-item">
+          <div class="timeline-side image-side"
+              data-aos="fade-up"
+            >
+            <img src="./assets/images/about/about-img-1.jpg" alt="Timeline Image 1">
+          </div>
+          <div class="timeline-side content-side" 
+              data-aos="fade-up"
+            >
             <h3>I wasn’t lost. I just hadn’t built my path yet.</h3>
-            <p>Born and raised in a small town in Maharashtra, I grew up quiet, stubborn, and curious — always the logical one in the room.
-               My father, an advocate, made sure I studied in an English medium school — where I thrived. I was sharp in academics, but life wasn’t about test scores.
-               It was about the unknown that came after.</p>
+            <p>
+                Born and raised in a small town in Maharashtra, I grew up quiet, stubborn, and curious — always the logical one in the room.
+            </p>
+            <p>
+                My father, an advocate, made sure I studied in an English medium school — where I thrived. I was sharp in academics, but life wasn’t about test scores.
+            </p>
+            <p>
+                It was about the unknown that came after.
+            </p>
+          </div>
         </div>
-    </div>
-    
-    
-    <div class="timeline-item right">
-        <div class="timeline-card">
-            <img src="./assets/images/blog/blog1.jpg" alt="">
+      
+        <!-- Timeline Item -->
+        <div class="timeline-item">
+          <div class="timeline-side content-side" 
+              data-aos="fade-up"
+              data-aos-offset="500"
+              data-aos-delay="80"
+            >
             <h3>I followed a plan. Just not my own.</h3>
-            <p>After 12th, I took the medical route — not because I wanted to, but because it felt like the “right” thing to do.
+            <p>
+                After 12th, I took the medical route — not because I wanted to, but because it felt like the “right” thing to do.
+            </p>
+            <p>
                 I aimed for PharmD, missed it, and shifted to B.Pharm as the next best move.
+            </p>
+            <p>
                 No passion. No spark. Just doing what felt safe.
-                It wasn’t failure. It just wasn’t me.</p>
+            </p>
+            <p>
+                It wasn’t failure. It just wasn’t me.
+            </p>
           </div>
-        </div>
-      
-        <div class="timeline-item left">
-          <div class="timeline-card">
-            <img src="./assets/images/blog/blog1.jpg" alt="">
-            <h3>The world shut down. I woke up.</h3>
-            <p>Graduating during the 2020 lockdown, I felt like I had a degree and no direction.
-                I got my pharmacy license. Looked at MBA programs. Considered government exams.
-                Nothing felt right.
-                So I worked at a local pharmacy while searching every morning for something more.
-                That “more” turned out to be digital marketing — and the moment I touched it, I knew.</p>
-          </div>
-        </div>
-      
-        <div class="timeline-item right">
-          <div class="timeline-card">
-            <img src="./assets/images/blog/blog1.jpg" alt="">
-            <h3>No resume. No roadmap. Just action.</h3>
-            <p>I started with cheap online courses, built fake brands to test strategies, and offered free work for testimonials.
-                No one was handing me a job — so I created my own path.
-                One cold email brought my first client.
-                From there, I grew — YouTube, LinkedIn, Instagram.
-                Today, I work with creators who have 10M+ audiences, helping them grow across multiple platforms.</p>
+          <div class="timeline-side image-side" 
+              data-aos="fade-up"
+              data-aos-offset="500"
+              data-aos-delay="80"
+            >
+            <img src="./assets/images/about/about-img-2.jpg" alt="Timeline Image 2">
           </div>
         </div>
 
-        <div class="timeline-item left">
-            <div class="timeline-card">
-              <img src="./assets/images/blog/blog1.jpg" alt="">
-              <h3>The world shut down. I woke up.</h3>
-              <p>Graduating during the 2020 lockdown, I felt like I had a degree and no direction.
-                  I got my pharmacy license. Looked at MBA programs. Considered government exams.
-                  Nothing felt right.
-                  So I worked at a local pharmacy while searching every morning for something more.
-                  That “more” turned out to be digital marketing — and the moment I touched it, I knew.</p>
-            </div>
+        <!-- Timeline Item -->
+        <div class="timeline-item">
+          <div class="timeline-side image-side"
+              data-aos="fade-up"
+              data-aos-offset="500"
+              data-aos-delay="80"
+            >
+            <img src="./assets/images/about/about-img-3.jpg" alt="Timeline Image 1">
+          </div>
+          <div class="timeline-side content-side"
+              data-aos="fade-up"
+              data-aos-offset="500"
+              data-aos-delay="80"
+            >
+            <h3>The world shut down. I woke up.</h3>
+            <p>
+                Graduating during the 2020 lockdown, I felt like I had a degree and no direction.
+            </p>
+            <p>
+                I got my pharmacy license. Looked at MBA programs. Considered government exams.
+                Nothing felt right.
+            </p>
+            <p>
+                So I worked at a local pharmacy while searching every morning for something more.
+            </p>
+            <p>
+                That “more” turned out to be digital marketing — and the moment I touched it, I knew.
+            </p>
+          </div>
         </div>
       
-        <div style="height: 300px;"></div> <!-- Spacer -->
-    </div>
+        <!-- Timeline Item -->
+        <div class="timeline-item">
+          <div class="timeline-side content-side" 
+              data-aos="fade-up"
+              data-aos-offset="500"
+              data-aos-delay="80"
+            >
+            <h3>No resume. No roadmap. Just action.</h3>
+            <p>
+                I started with cheap online courses, built fake brands to test strategies, and offered free work for testimonials.
+            </p>
+            <p>
+                No one was handing me a job — so I created my own path.
+            </p>
+            <p>
+                One cold email brought my first client.
+            </p>
+            <p>
+                From there, I grew — YouTube, LinkedIn, Instagram.
+            </p>
+            <p>
+                Today, I work with creators who have 10M+ audiences, helping them grow across multiple platforms.
+            </p>
+            <p>
+                That's how I became The Social Media Manager.
+            </p>
+          </div>
+          <div class="timeline-side image-side"
+              data-aos="fade-up"
+              data-aos-offset="500"
+              data-aos-delay="80"
+            >
+            <img src="./assets/images/about/about-img-4.jpg" alt="Timeline Image 2">
+          </div>
+        </div>
+      
+        
+      </div>
+      
 
 
     <!-- <div class="resume-area no-padding" id="resume">
@@ -528,7 +600,11 @@
     <!-- SCRIPT JS-->
     <script src="assets/js/script.js"></script>
 
-    <!-- <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script> -->
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+
+    <script>
+        AOS.init();
+      </script>
 
     <script>
         const timelineLine = document.getElementById('timeline-line');
