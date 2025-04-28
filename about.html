@@ -173,9 +173,13 @@
         }
         
         @media (max-width: 900px) {
-        .timeline-container{
-            padding-bottom: 2rem;
+        .timeline-item-alt{
+            flex-direction: column-reverse;
         }
+        .timeline-container {
+            padding-top: 1px;
+            padding-bottom: .4rem;
+          }
           .content-side h3 {
             font-size: 1.3rem;
           }
@@ -328,7 +332,7 @@
         </div>
       
         <!-- Timeline Item -->
-        <div class="timeline-item">
+        <div class="timeline-item timeline-item-alt">
           <div class="timeline-side content-side" 
               data-aos="fade-up"
               data-aos-offset="500"
@@ -389,7 +393,7 @@
         </div>
       
         <!-- Timeline Item -->
-        <div class="timeline-item">
+        <div class="timeline-item timeline-item-alt">
           <div class="timeline-side content-side" 
               data-aos="fade-up"
               data-aos-offset="500"
