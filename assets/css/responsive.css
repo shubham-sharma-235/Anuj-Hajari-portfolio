@@ -58,7 +58,7 @@ Version      : 1.0
 
 
     .about-area {
-        padding-top: 0px;
+        padding-top: 50px;
     }
 
     .resume-area {
@@ -339,7 +339,7 @@ Version      : 1.0
 
 
     .about-area {
-        padding-top: 0px;
+        padding-top: 40px;
     }
 
     .about-content-part p {
@@ -438,7 +438,7 @@ Version      : 1.0
         margin-top: 0;
     }
     .hero-image img {
-        width: 280px;
+        width: 290px;
     }
 
     .hero-content .dot-shape {
