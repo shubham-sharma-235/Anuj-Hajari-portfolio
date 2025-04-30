@@ -15,6 +15,13 @@
     color: #75d303;
     font-size: 14px;
 }
+/* .hero-image img {
+    transition: transform 0.5s ease;
+}
+  
+.hero-image img:hover {
+    transform: rotate(5deg);
+} */
 
 @media(max-width:1420px){
     .available-btn{
@@ -121,4 +128,19 @@
     .portfolio-disclamer-section .portfolio-disclamer-card p{
         font-size: 14px;
     }
+    .hero-content h2 {
+        background: radial-gradient(#5708b0, #150033);
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+        transition: all ease-in-out .3s;
+    
+        background-clip: text;
+        text-fill-color: transparent;
+    }
+    .scroller__inner {
+        gap: 80px;
+        gap: 0rem;
+    }
 }
+
+
