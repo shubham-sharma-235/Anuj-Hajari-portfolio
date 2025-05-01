@@ -51,6 +51,13 @@
     .available-btn span {
         font-size: 12px;
     }
+        
+    .scroller[data-speed="slow"] {
+        --_animation-duration: 15s;
+    }
+    .scroller__inner img {
+        margin-right: 24px;
+    }
 }
 
 .hero-content h2 {
