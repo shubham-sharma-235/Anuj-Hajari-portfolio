@@ -343,8 +343,9 @@ Version      : 1.0
     }
 
     .about-content-part p {
-        font-size: 18px;
-        line-height: 1.4em;
+        font-size: 19px;
+        letter-spacing: 1px;
+        line-height: 1.6em;
     }
 
     .resume-area {

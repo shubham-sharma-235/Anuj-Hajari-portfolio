@@ -3480,11 +3480,11 @@ ul.blog_pagination li a:hover {
 }
 
 .scroller[data-speed="fast"] {
-    --_animation-duration: 20s;
+    --_animation-duration: 35s;
 }
 
 .scroller[data-speed="slow"] {
-    --_animation-duration: 30s;
+    --_animation-duration: 35s;
 }
 
 @-webkit-keyframes scroll {
